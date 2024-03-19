@@ -1,10 +1,6 @@
 import Bull from 'bull';
+import { redisConfig } from './redisConfig';
 
-const redisConfig = {
-    host: 'localhost',
-    port: 6379
-};
+const queue = new Bull('emailQueue', { redis: redisConfig });
 
-const emailQueue = new Bull('emailQueue', { redis: redisConfig });
-
-export default emailQueue;
+export default queue;

@@ -6,7 +6,7 @@ const validateRequest = (schema: AnySchema) => async (req: Request, res: Respons
     try {
         await schema.validate(req.body);
         next();
-    } catch (error: unknown) { // Tipando o erro como `unknown`
+    } catch (error: unknown) {
         if (error instanceof ValidationError) {
             res.status(400).json({ error: error.errors });
         } else if (error instanceof Error) {

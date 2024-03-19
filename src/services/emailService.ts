@@ -11,8 +11,8 @@ const transporter = nodemailer.createTransport({
 
 const sendEmail = async (email: EmailJob) => {
     const mailOptions = {
-        from: process.env.EMAIL_ADDRESS, // remetente
-        to: email.to.join(','), // destinatários
+        from: process.env.EMAIL_ADDRESS,
+        to: email.to.join(','),
         cc: email.cc?.join(','),
         bcc: email.bcc?.join(','),
         subject: email.subject,

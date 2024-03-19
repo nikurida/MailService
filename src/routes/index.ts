@@ -1,5 +1,3 @@
-// src/routes/index.ts
-
 import { Router } from 'express';
 import { enqueueEmail } from '../controllers/emailController';
 import validateRequest from '../middleware/validateRequest';

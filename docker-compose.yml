@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+    ports:
+      - 4000:4000
+    networks:
+      - internal    
+
+  redis:
+    image: redis:7.2.4-alpine    
+    networks:
+      - internal
+
+networks:
+  internal:
