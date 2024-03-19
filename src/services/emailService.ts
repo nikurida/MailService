@@ -28,7 +28,6 @@ const sendEmail = async (email: EmailJob) => {
         return info;
     } catch (error) {
         console.error('Error sending email:', error);
-        throw error; // Lança o erro para ser tratado mais acima na cadeia de chamadas
     }
 };
 
