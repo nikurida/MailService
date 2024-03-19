@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { BullAdapter } from 'bull-board/bullAdapter';
 import { createBullBoard } from 'bull-board';
 import queue from './config/queueConfig';
+//import authMiddleware from './middleware/authMiddleware';
 
 const app = express();
 
@@ -13,12 +14,6 @@ const { router: bullBoardRouter } = createBullBoard([
 ]);
 
 app.use(cors());
-
-//{
-//   origin: 'https://mailservice.sistemagtf.com.br',
-//   methods: ['GET', 'POST'],
-//   allowedHeaders: ['Content-Type', 'Authorization']
-//}
 
 dotenv.config();
 
