@@ -1,11 +1,6 @@
-FROM ubuntu:latest
+FROM oven/bun:alpine
 
 WORKDIR /usr/src/app
-
-RUN apt-get update && apt-get install -y curl unzip && \
-    curl https://bun.sh/install | bash
-
-ENV PATH="/root/.bun/bin:${PATH}"
 
 COPY package.json bun.lockb ./
 RUN bun install
