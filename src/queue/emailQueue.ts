@@ -12,10 +12,9 @@ const emailQueue = queue.process(async (job) => {
 });
 
 export const addEmailToQueue = async (emailData: EmailJob) => {
-    const job = await queue.add(emailData, {
+    await queue.add(emailData, {
         priority: emailData.priority
     }); 
-    console.log(job);
 };
 
 export default emailQueue;

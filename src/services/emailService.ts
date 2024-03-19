@@ -15,6 +15,8 @@ const sendEmail = async (email: EmailJob) => {
         to: email.to.join(','),
         cc: email.cc?.join(','),
         bcc: email.bcc?.join(','),
+        title: email.title,
+        style: email.style,
         subject: email.subject,
         text: email.text,
         html: email.body
