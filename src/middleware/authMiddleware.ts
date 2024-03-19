@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const TOKEN_SECRET = 'seu_token_secreto'; // Coloque seu token secreto aqui ou carregue de uma variável de ambiente
+const TOKEN_SECRET = 'seu_token_secreto';
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
     const token = req.headers['authorization'];
