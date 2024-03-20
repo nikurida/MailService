@@ -10,7 +10,7 @@ services:
     ports:
       - 4000:4000
     networks:
-      - internal    
+      - internal   
 
   redis:
     image: redis:7.2.4-alpine    
