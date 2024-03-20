@@ -7,6 +7,8 @@ services:
     environment:
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
+    ports:
+      - 4000:4000
     networks:
       - internal
     restart: always
