@@ -17,20 +17,5 @@ services:
       - internal
     restart: always
 
-  nginx:
-    image: nginx:1.25.4-alpine
-    volumes: 
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    environment:
-      - VIRTUAL_HOST=mail.sistemagtf.com.br
-      - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=mail.sistemagtf.com.br
-    networks:
-      - proxy-nginx
-      - internal
-    restart: always
-
 networks:
-  proxy-nginx:
-    external: true
   internal:
