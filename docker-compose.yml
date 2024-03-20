@@ -7,15 +7,15 @@ services:
     environment:
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
-    ports:
-      - 4000:4000
     networks:
-      - internal   
+      - internal
+    restart: always
 
   redis:
     image: redis:7.2.4-alpine    
     networks:
       - internal
+    restart: always
 
   nginx:
     image: nginx:1.25.4-alpine
@@ -28,6 +28,7 @@ services:
     networks:
       - proxy-nginx
       - internal
+    restart: always
 
 networks:
   proxy-nginx:
